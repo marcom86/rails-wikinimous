@@ -2,6 +2,12 @@
 
 <div class="title-show">
   <h1><%= @article.title %></h1>
+  <%= link_to edit_article_path(@article.id), class: 'pull-right btn btn-default' do %>
+    <i class="fa fa-pencil"></i>
+  <% end %>
+  <%= link_to article_path(@article.id), method: :delete, data: { confirm: "Delete #{@article.title}?" } do %>
+    <i class="fa fa-trash-o" aria-hidden="true"></i>
+  <% end %>
 </div>
 <p><%= @article.content %></p>
 

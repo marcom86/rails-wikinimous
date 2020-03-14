@@ -10,7 +10,11 @@ puts 'Creating 20 fake articles...'
 20.times do
   article = Article.new(
     title: Faker::Lorem.sentence(word_count: 2, supplemental: false, random_words_to_add: 4),
-    content: Faker::Lorem.paragraph(sentence_count: 2, supplemental: false, random_sentences_to_add: 6)
+    content: "#{Faker::Lorem.paragraph(sentence_count: 3,supplemental: false, random_sentences_to_add: 6)},
+              #{Faker::LoremPixel.image}, #{Faker::Lorem.sentence(word_count: 2, supplemental: false, random_words_to_add: 4)},
+              #{Faker::Lorem.paragraph(sentence_count: 6, supplemental: false, random_sentences_to_add: 12)},
+              #{Faker::Lorem.sentence(word_count: 2, supplemental: false, random_words_to_add: 4)},
+              #{Faker::Lorem.paragraph(sentence_count: 6, supplemental: false, random_sentences_to_add: 12)}"
   )
   article.save!
 end
