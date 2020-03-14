@@ -3,7 +3,7 @@
 <div class="container">
   <ul>
     <% @articles.each do |article| %>
-      <li class= "title"><%= link_to article.title, article_path(article) %></li>
+      <li class= "title"><%= link_to article.title, article %></li>
       <li class= "content"><%= article.content[0,99] %></li>
     <%end%>
   </ul>
